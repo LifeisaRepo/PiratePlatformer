@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqgr5qnsoobir"]
+
+[ext_resource type="PackedScene" uid="uid://63dj6vgjxbjg" path="res://scenes/assets/collectibles/base_collectible.tscn" id="1_tplm1"]
+
+[node name="Diamond" instance=ExtResource("1_tplm1")]

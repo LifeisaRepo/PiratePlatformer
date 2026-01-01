@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dywbe78w2trvq"]
+
+[ext_resource type="Script" path="res://scripts/assets/small_clouds_spawner.gd" id="1_npa35"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4jq0o"]
+normal = Vector2(1, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_giuts"]
+size = Vector2(50, 50)
+
+[node name="SmallCloudsSpawner" type="Node2D"]
+script = ExtResource("1_npa35")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_4jq0o")
+
+[node name="spawnpoint" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="spawnpoint"]
+texture = SubResource("PlaceholderTexture2D_giuts")

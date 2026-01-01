@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://ihqemyw6hfaq"]
+
+[ext_resource type="PackedScene" uid="uid://63dj6vgjxbjg" path="res://scenes/assets/collectibles/base_collectible.tscn" id="1_8owge"]
+[ext_resource type="Texture2D" uid="uid://btv0w4wm6h73q" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_tm0id"]
+[ext_resource type="Texture2D" uid="uid://ssdoqm1bd6nq" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_40cks"]
+[ext_resource type="Texture2D" uid="uid://bhg3q7ci6qwox" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_3n3gv"]
+[ext_resource type="Texture2D" uid="uid://buo6l67gruuoy" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_ltxab"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3v7eq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tm0id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_40cks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3n3gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ltxab")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="GoldCoin" instance=ExtResource("1_8owge")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_3v7eq")
+frame = 0
+frame_progress = 0.0

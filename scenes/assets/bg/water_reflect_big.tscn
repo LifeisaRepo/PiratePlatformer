@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://klc8rjnxc1jq"]
+
+[ext_resource type="Texture2D" uid="uid://bx5sh5bi5agw8" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="1_25nxy"]
+[ext_resource type="Texture2D" uid="uid://o70ebefyjhla" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="2_a77ro"]
+[ext_resource type="Texture2D" uid="uid://ul7h3s2es2g7" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="3_egsur"]
+[ext_resource type="Texture2D" uid="uid://b5082hmtpek8j" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="4_4p3wa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lmw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_25nxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a77ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_egsur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4p3wa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="WaterReflectBig" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_4lmw2")
+animation = &"idle"
+autoplay = "idle"

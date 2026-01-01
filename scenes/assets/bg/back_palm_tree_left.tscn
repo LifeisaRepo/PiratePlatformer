@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7frhagenwjaw"]
+
+[ext_resource type="Texture2D" uid="uid://dgkvwhjekniwr" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="1_iue8s"]
+[ext_resource type="Texture2D" uid="uid://cy7vs7qg3tn2y" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="2_v2s6f"]
+[ext_resource type="Texture2D" uid="uid://csckav76ql8h8" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="3_0ogxl"]
+[ext_resource type="Texture2D" uid="uid://b2vllsag4lfkh" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="4_gx16c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4ro7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iue8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v2s6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ogxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gx16c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="BackPalmTreeLeft" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_h4ro7")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.89461

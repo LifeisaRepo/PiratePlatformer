@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1axd0w58jqfv"]
+
+[ext_resource type="Texture2D" uid="uid://cmxrdpcij28ub" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/01.png" id="1_26pv7"]
+[ext_resource type="PackedScene" uid="uid://63dj6vgjxbjg" path="res://scenes/assets/collectibles/base_collectible.tscn" id="1_628qr"]
+[ext_resource type="Texture2D" uid="uid://8iyerv2bdyx8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/02.png" id="2_v6gdj"]
+[ext_resource type="Texture2D" uid="uid://rl8f84ohnf73" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/03.png" id="3_h7w26"]
+[ext_resource type="Texture2D" uid="uid://bgrd5i806neby" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Diamond/04.png" id="4_io4nh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qw8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_26pv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v6gdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h7w26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_io4nh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="RedDiamond" instance=ExtResource("1_628qr")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7qw8g")
+frame = 0
+frame_progress = 0.0

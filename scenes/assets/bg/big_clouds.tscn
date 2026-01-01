@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drrssvb8uuy6m"]
+
+[ext_resource type="Script" path="res://scripts/assets/big_clouds.gd" id="1_tgj40"]
+
+[node name="BigClouds" type="Node2D"]
+script = ExtResource("1_tgj40")

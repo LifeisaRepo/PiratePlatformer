@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlph65utscmp0"]
+
+[ext_resource type="Texture2D" uid="uid://bv6w2l1wi43nk" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_fggnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7wmn"]
+size = Vector2(64, 28)
+
+[node name="stone_platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fggnj")
+region_enabled = true
+region_rect = Rect2(32, 192, 64, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_b7wmn")
