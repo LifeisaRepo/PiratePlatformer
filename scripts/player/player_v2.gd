@@ -4,11 +4,17 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -360.0
 var isFalling = false
-var playingGround = false
 var attackAnimIndex = 0
+var targetEnemy: Node2D = null
 
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animTree: AnimationTree = $AnimationTree
+
+func _ready() -> void:
+	if is_on_floor():
+		animTree.get("parameters/playback").travel("falling")
+	else:
+		animTree.get("parameters/playback").travel("idle")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,11 +29,13 @@ func _physics_process(delta: float) -> void:
 	# -1, 0, 1
 	var direction := Input.get_axis("moveLeft", "moveRight")
 	
-	# Flipping the sprite
+	# Flipping the sprite and the hitbox
 	if direction > 0:
 		animatedSprite.flip_h = false
+		$hitbox.position.x = 13.5
 	elif direction < 0:
 		animatedSprite.flip_h = true
+		$hitbox.position.x = -13.5
 		
 	
 	if animTree.get("parameters/playback").get_current_node() == StringName("falling"):
@@ -74,6 +82,18 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _on_animation_tree_animation_started(anim_name: StringName) -> void:
+	if anim_name.containsn("air_attack"):
+		print("air_attack")
+	elif anim_name.containsn("attack"):
+		print("ground_attack")
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	playingGround = false # Replace with function body.
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		targetEnemy = body
+
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method("enemy"):
+		targetEnemy = null

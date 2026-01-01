@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://diw82oss1koim"]
+[gd_scene load_steps=110 format=3 uid="uid://diw82oss1koim"]
 
 [ext_resource type="Script" path="res://scripts/player/player_v2.gd" id="1_b1hvs"]
 [ext_resource type="Texture2D" uid="uid://ctr5twoby8rqm" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 01.png" id="2_ixlm3"]
@@ -995,7 +995,11 @@ states/jump/position = Vector2(491, -14)
 states/run/node = SubResource("AnimationNodeAnimation_35jdr")
 states/run/position = Vector2(590, 100)
 transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_7wdn8"), "jump", "falling", SubResource("AnimationNodeStateMachineTransition_1gy1j"), "ground", "idle", SubResource("AnimationNodeStateMachineTransition_muofw"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_5kc6v"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_vrbg5"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_i64m2"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_08mnt"), "falling", "ground", SubResource("AnimationNodeStateMachineTransition_or116"), "idle", "attacks", SubResource("AnimationNodeStateMachineTransition_snrat"), "attacks", "idle", SubResource("AnimationNodeStateMachineTransition_lenug"), "run", "attacks", SubResource("AnimationNodeStateMachineTransition_fd4pf"), "attacks", "run", SubResource("AnimationNodeStateMachineTransition_tjx00"), "falling", "air_attacks", SubResource("AnimationNodeStateMachineTransition_6w1o8"), "air_attacks", "falling", SubResource("AnimationNodeStateMachineTransition_jn078")]
-graph_offset = Vector2(181, -358.447)
+graph_offset = Vector2(-21, -255.447)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_neted"]
+radius = 14.0
+height = 36.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 99
@@ -1005,7 +1009,7 @@ script = ExtResource("1_b1hvs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_cbmg3")
-animation = &""
+animation = &"attack_1"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1028,4 +1032,13 @@ parameters/attacks/Transition/current_state = ""
 parameters/attacks/Transition/transition_request = ""
 parameters/attacks/Transition/current_index = -1
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(13.5, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_neted")
+
+[connection signal="animation_started" from="AnimationTree" to="." method="_on_animation_tree_animation_started"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d3yydpuearmk3"]
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="CharAnimSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-9, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="FxSprite2D" type="AnimatedSprite2D" parent="."]
