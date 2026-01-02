@@ -10,6 +10,10 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 
+[node name="detectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionZone"]
+
 [node name="RayCastRight" type="RayCast2D" parent="."]
 target_position = Vector2(9, 0)
 

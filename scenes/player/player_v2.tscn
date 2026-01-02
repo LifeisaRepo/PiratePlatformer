@@ -1004,12 +1004,13 @@ height = 36.0
 [node name="Player" type="CharacterBody2D"]
 z_index = 99
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_b1hvs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_cbmg3")
-animation = &"attack_1"
+animation = &""
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1034,6 +1035,8 @@ parameters/attacks/Transition/current_index = -1
 
 [node name="hitbox" type="Area2D" parent="."]
 position = Vector2(13.5, -5)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 rotation = -1.5708

@@ -10,8 +10,11 @@ var targetEnemy: Node2D = null
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animTree: AnimationTree = $AnimationTree
 
+func is_player():
+	pass
+
 func _ready() -> void:
-	if is_on_floor():
+	if not is_on_floor():
 		animTree.get("parameters/playback").travel("falling")
 	else:
 		animTree.get("parameters/playback").travel("idle")

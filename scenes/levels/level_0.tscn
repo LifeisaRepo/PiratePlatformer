@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bmmmdq07urlrp"]
+[gd_scene load_steps=30 format=4 uid="uid://bmmmdq07urlrp"]
 
 [ext_resource type="Texture2D" uid="uid://bv6w2l1wi43nk" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_o2tck"]
 [ext_resource type="Texture2D" uid="uid://dkw8bpel1r8n4" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="3_il5ct"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bm2n6n2yucgxk" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32)_bg.png" id="11_kys24"]
 [ext_resource type="PackedScene" uid="uid://b41irevmfjt0j" path="res://scenes/assets/killzone.tscn" id="14_u7iw1"]
 [ext_resource type="PackedScene" uid="uid://c4rxqma81epfs" path="res://scenes/enemy/fierce_tooth.tscn" id="18_tj1ei"]
+[ext_resource type="PackedScene" uid="uid://b1r6b3wnoi0bj" path="res://scenes/enemy/fierce_tooth_v2.tscn" id="19_vxpkm"]
 [ext_resource type="PackedScene" uid="uid://diw82oss1koim" path="res://scenes/player/player_v2.tscn" id="21_qfdt1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k0ewv"]
@@ -351,7 +352,10 @@ tile_map_data = PackedByteArray("AAD8//7/AgABAAEAAAD9//7/AgACAAEAAAD9//3/CQAAAAA
 tile_set = SubResource("TileSet_kubgf")
 
 [node name="FierceTooth" parent="Tiles" instance=ExtResource("18_tj1ei")]
-position = Vector2(212, -13)
+position = Vector2(298, -141)
+
+[node name="fierce_tooth_v2" parent="Tiles" instance=ExtResource("19_vxpkm")]
+position = Vector2(265, -3)
 
 [node name="Platforms" type="Node2D" parent="."]
 
